@@ -1867,6 +1867,7 @@ input[type=checkbox]:hover {
           flex-direction: column;
   width: calc(100vw - 20px);
   max-width: 45%;
+  max-height: 100vh;
   background-color: white;
   border-radius: 5px;
   padding: 20px;
@@ -1896,6 +1897,52 @@ input[type=checkbox]:hover {
           justify-content: space-between;
 }
 
+.popup__scroll {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 15px;
+}
+
+.popup__bottom {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px 5px 0 5px;
+  border-top: 0.5px solid #282828;
+}
+
+.popup__top {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0 5px 10px 5px;
+  border-bottom: 0.5px solid #282828;
+}
+
 .popup__close {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1907,12 +1954,11 @@ input[type=checkbox]:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -ms-flex-item-align: end;
       align-self: flex-end;
-  padding-bottom: 25px;
 }
 
 .popup__close span {
@@ -1949,36 +1995,34 @@ input[type=checkbox]:hover {
 }
 
 .popup__title {
-  width: 100%;
+  width: 94%;
   font-family: "Ubuntu";
   font-style: normal;
   font-weight: 500;
-  font-size: 1.1em;
+  font-size: 24px;
   line-height: 120.4%;
   text-transform: uppercase;
   text-align: center;
-  padding: 0 5% 15px 5%;
+  padding: 0 0 15px;
 }
 
 .popup__subtitle {
-  width: 100%;
+  width: 84%;
   font-family: "Jura";
   font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
+  font-weight: 500;
+  font-size: 16px;
   line-height: 120.4%;
   text-align: center;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  padding: 0 10%;
+  padding: 0 0 10px;
 }
 
 .popup__info {
   width: 100%;
-  height: 100%;
   -ms-grid-column-align: stretch;
       justify-self: stretch;
-  max-height: calc(100vh - 175px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1986,10 +2030,6 @@ input[type=checkbox]:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  border-top: 0.5px solid #282828;
-  border-bottom: 0.5px solid #282828;
-  padding: 16px 0;
-  margin: 10px 0;
 }
 
 .address-popup-info {
@@ -2008,17 +2048,13 @@ input[type=checkbox]:hover {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  border-top: 0.5px solid #282828;
-  border-bottom: 0.5px solid #282828;
-  padding: 15px 0;
+  padding: 0 10px 15px;
 }
 
 .modal-image {
   position: relative;
   height: 330px;
   width: 100%;
-  max-height: 36vh;
-  max-width: 60vh;
   padding: 7px;
   -webkit-box-shadow: inset 0px 1px 5px rgba(0, 0, 0, 0.25);
           box-shadow: inset 0px 1px 5px rgba(0, 0, 0, 0.25);
@@ -2046,7 +2082,7 @@ input[type=checkbox]:hover {
   cursor: pointer;
   position: absolute;
   right: 15px;
-  bottom: 19px;
+  bottom: 20px;
   z-index: 1;
 }
 
@@ -2062,8 +2098,8 @@ input[type=checkbox]:hover {
   font-family: "Jura";
   font-style: normal;
   font-weight: 700;
-  font-size: 14px;
-  line-height: 15px;
+  font-size: 16px;
+  line-height: 19px;
   letter-spacing: 0.18em;
 }
 
@@ -2078,7 +2114,6 @@ input[type=checkbox]:hover {
 }
 
 .review-form {
-  overflow: auto;
   position: relative;
   height: 100%;
   display: -webkit-box;
@@ -2091,7 +2126,6 @@ input[type=checkbox]:hover {
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
-  padding: 0 10px;
 }
 
 .review-form .stars {
@@ -2112,6 +2146,7 @@ input[type=checkbox]:hover {
 }
 
 .review-form .form__input-block {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2122,9 +2157,11 @@ input[type=checkbox]:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin: 0;
 }
 
 .review-form label {
+  top: 30px;
   font-family: "Jura";
   font-style: normal;
   font-weight: 500;
@@ -2141,7 +2178,7 @@ input[type=checkbox]:hover {
   border: 0.5px solid #282828;
   border-radius: 3px;
   margin: 16px 0;
-  padding: 20px;
+  padding: 16px 20px;
   font-family: "Jura";
   font-style: normal;
   font-weight: 400;
@@ -2158,11 +2195,16 @@ input[type=checkbox]:hover {
   height: 205px;
 }
 
+.review-form input:focus + label,
+.review-form input.has-value + label,
+.review-form textarea:focus + label,
+.review-form textarea.has-value + label {
+  -webkit-transform: translate(0, -25px);
+      -ms-transform: translate(0, -25px);
+          transform: translate(0, -25px);
+}
+
 .sizes-table {
-  overflow: scroll;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2174,6 +2216,7 @@ input[type=checkbox]:hover {
       -ms-flex-align: center;
           align-items: center;
   border: 0.5px solid #282828;
+  margin: 0 auto;
 }
 
 .sizes-table__row {
@@ -2193,7 +2236,7 @@ input[type=checkbox]:hover {
 
 .sizes-table__row:nth-child(1) {
   position: sticky;
-  top: 0;
+  top: -15px;
   background-color: white;
 }
 
@@ -2220,11 +2263,10 @@ input[type=checkbox]:hover {
       -ms-flex-pack: center;
           justify-content: center;
   height: 49.5px;
-  width: 120px;
-  max-width: calc((100vw - 40px) / 3);
+  width: 100px;
   border-right: 0.5px solid #282828;
   font-weight: 300;
-  font-size: 12px;
+  font-size: 16px;
   line-height: 120.4%;
   text-transform: uppercase;
 }
@@ -2306,7 +2348,6 @@ input[type=checkbox]:hover {
 }
 
 .prod-description-modal__content {
-  height: calc(100% - 20px);
   width: 200%;
   padding: 10px;
   display: -webkit-box;
@@ -2324,9 +2365,7 @@ input[type=checkbox]:hover {
   -webkit-box-ordinal-group: 0;
       -ms-flex-order: -1;
           order: -1;
-  overflow: auto;
   height: 100%;
-  padding-right: 5px;
   width: 100%;
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
@@ -2340,11 +2379,10 @@ input[type=checkbox]:hover {
 }
 
 .popup-small {
-  max-width: 420px;
+  max-width: 420px !important;
 }
 
 .login-form {
-  overflow: auto;
   width: 100%;
   max-height: calc(100vh - 80px);
   max-width: 540px;
@@ -2361,7 +2399,7 @@ input[type=checkbox]:hover {
 .login-form__title {
   max-width: 100%;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 22px;
   line-height: 140%;
   text-align: center;
   text-transform: uppercase;
@@ -2375,15 +2413,15 @@ input[type=checkbox]:hover {
   font-size: 26px;
   line-height: 28px;
   text-align: center;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 .login-form__info {
   max-width: 100%;
   font-family: "Jura";
   font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
+  font-weight: 500;
+  font-size: 16px;
   line-height: 120.4%;
   text-align: center;
   letter-spacing: 0.05em;
@@ -2410,7 +2448,7 @@ input[type=checkbox]:hover {
 
 .login-form__action-title {
   font-weight: 500;
-  font-size: 14px;
+  font-size: 18px;
   line-height: 120.4%;
   text-align: center;
   text-transform: uppercase;
@@ -2420,12 +2458,16 @@ input[type=checkbox]:hover {
 .login-form__action {
   font-family: "Jura";
   font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
+  font-weight: 500;
+  font-size: 16px;
   line-height: 120.4%;
   text-align: center;
   letter-spacing: 0.05em;
   text-transform: uppercase;
+}
+
+.login-form .form__input-block label {
+  bottom: 32px;
 }
 
 .form__input-block {
@@ -2444,7 +2486,6 @@ input[type=checkbox]:hover {
   position: absolute;
   background-color: white;
   left: 30px;
-  bottom: 32px;
   padding: 3px 5px;
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
@@ -2463,11 +2504,11 @@ input[type=checkbox]:hover {
   width: 100%;
   border: 0.5px solid #282828;
   border-radius: 3px;
-  padding: 17px 25px 9px 25px;
+  padding: 16px 20px;
   font-family: "Jura";
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 20px;
   line-height: 150.3%;
 }
 
@@ -2539,6 +2580,9 @@ input[type=checkbox]:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin-bottom: 24px;
 }
 
@@ -2559,7 +2603,7 @@ input[type=checkbox]:hover {
   font-family: "Jura";
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 14px;
   letter-spacing: 0.05em;
 }
@@ -2629,6 +2673,13 @@ input[type=checkbox]:hover {
   color: #FF0000;
   padding-right: 10px;
   opacity: 0;
+  font-family: "Jura";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  letter-spacing: 0.05em;
 }
 
 .input-valid.valid {
@@ -2673,6 +2724,17 @@ input[type=checkbox]:hover {
   -webkit-transform: scale(94%);
       -ms-transform: scale(94%);
           transform: scale(94%);
+}
+
+.slider-panel__status {
+  font-family: "Jura";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 120.4%;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 .swiper {
@@ -3608,9 +3670,9 @@ input[type=checkbox]:hover {
   color: rgba(0, 0, 0, 0.5);
   font-family: "Jura";
   font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 14px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
   letter-spacing: 0.05em;
 }
 
@@ -3896,6 +3958,7 @@ select[name=quantity] {
 }
 
 .reviews__date {
+  width: 100%;
   font-family: "Jura";
   font-style: normal;
   font-weight: 600;
@@ -5554,18 +5617,14 @@ header {
     padding: 10px 15px;
   }
 
+  .sizes-table__cell {
+    width: 74px;
+    font-size: 14px;
+  }
+
   .modal-dialog__popup {
     max-width: unset;
     padding: 20px 5px;
-  }
-
-  .popup__title {
-    max-width: 94%;
-  }
-
-  .popup__subtitle {
-    max-width: 94%;
-    font-size: 10px;
   }
 
   .header {
@@ -5694,19 +5753,11 @@ header {
     max-width: unset;
     padding: 20px 5px;
   }
-
-  .popup__title {
-    max-width: 94%;
-  }
 }
 
 @media (min-width: 540px) and (max-width: 1023px) {
   .modal-dialog__popup {
     max-width: 80%;
-  }
-
-  .popup__title {
-    max-width: 94%;
   }
 }
 
@@ -5782,33 +5833,9 @@ header {
   }
 }
 
-@media (max-height: 280px) and (orientation: landscape) {
-  .address-popup-info {
-    padding: 5px 0;
-  }
-}
-
 @media (max-height: 540px) and (orientation: landscape) {
-  .popup__title {
-    max-width: 94%;
-    padding: 0 5% 5px 5%;
-  }
-
-  .popup__close {
-    padding-bottom: 10px;
-    margin-bottom: -34px;
-  }
-
-  .popup__close span {
-    display: none;
-  }
-
   .modal-dialog__popup {
     height: 100vh;
-  }
-
-  .popup__info {
-    max-height: calc(100vh - 140px);
   }
 
   .menu-mobile__items {
@@ -5819,12 +5846,6 @@ header {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     max-width: 60%;
-  }
-}
-
-@media (min-height: 281px) and (orientation: landscape) {
-  .address-popup-info {
-    padding: 15px 0;
   }
 }
 
