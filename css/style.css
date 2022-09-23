@@ -316,6 +316,7 @@ img.lazyload:not([src]) {
 
 .offer p {
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
+  text-align: justify;
   width: 476px;
   z-index: 1;
 }
@@ -711,7 +712,7 @@ img.lazyload:not([src]) {
   position: absolute;
   height: 66px;
   right: 40px;
-  bottom: 28px;
+  bottom: 48px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -760,8 +761,8 @@ img.lazyload:not([src]) {
 .header-slider__status {
   width: 50px;
   color: #F1F1F1;
-  font-weight: 500;
-  font-size: 24px;
+  font-weight: 400;
+  font-size: 20px;
   line-height: 120.4%;
   text-transform: uppercase;
   margin-right: 30px;
@@ -770,6 +771,12 @@ img.lazyload:not([src]) {
   transition: all 0.3s;
   white-space: nowrap;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
+}
+
+.header-slider__status span {
+  font-weight: 700;
+  font-size: 32px;
+  padding-right: 3px;
 }
 
 .header-slider__nav {
@@ -892,6 +899,16 @@ img.lazyload:not([src]) {
   letter-spacing: 0.03em;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
   padding-bottom: 20px;
+  -webkit-animation-name: slideLeft;
+          animation-name: slideLeft;
+  -webkit-animation-duration: 1.8s;
+          animation-duration: 1.8s;
+  -webkit-animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
+  -webkit-animation-delay: 0ms;
+          animation-delay: 0ms;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
 }
 
 .page-offer__subtitle {
@@ -2634,9 +2651,12 @@ input[type=checkbox]:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -ms-flex-item-align: end;
       align-self: flex-end;
-  margin-bottom: 3px;
+  margin-bottom: 5px;
   background-color: transparent;
   padding-right: 10px;
 }
@@ -2652,6 +2672,21 @@ input[type=checkbox]:hover {
 .show-pass img {
   content: url(../img/icon-show-pass.svg);
   margin-left: 5px;
+}
+
+.show-pass span {
+  font-family: "Jura";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 14px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  letter-spacing: 0.05em;
 }
 
 .show-pass.clicked .show-pass__hide {
@@ -3775,8 +3810,10 @@ input[type=checkbox]:hover {
 }
 
 .get-size-bt {
-  color: #282828;
-  background-color: #EDE734;
+  width: 100%;
+  height: 48px;
+  color: white;
+  background-color: #E15800;
   padding: 10px 35px;
   border-radius: 3px;
   -ms-flex-item-align: start;
@@ -3883,7 +3920,7 @@ select[name=quantity] {
 }
 
 .to-bag-bt {
-  height: 54px;
+  height: 58px;
   min-height: 54px;
   background-color: #282828;
   padding: 15px 20px;
@@ -4488,10 +4525,15 @@ header {
       -ms-flex-pack: center;
           justify-content: center;
   z-index: 99;
-  -webkit-animation-name: menuMobileShow;
-          animation-name: menuMobileShow;
-  -webkit-animation-duration: 0.3s;
-          animation-duration: 0.3s;
+  opacity: 1;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.menu-mobile--hidden {
+  z-index: -1;
+  opacity: 0;
 }
 
 .menu-mobile__back {
@@ -5247,7 +5289,7 @@ header {
 
   .offer {
     position: absolute;
-    height: calc(100vh - 220px);
+    height: calc(100vh - 230px);
     width: 100vw;
     max-height: unset;
     top: 70px;
@@ -5259,7 +5301,6 @@ header {
 
   .offer p {
     width: 100%;
-    display: none;
   }
 
   .phones {
@@ -5504,6 +5545,10 @@ header {
 }
 
 @media (max-width: 376px) {
+  .offer p {
+    font-size: 12px;
+  }
+
   .offer__title {
     font-size: 1.48em !important;
   }
@@ -5584,6 +5629,10 @@ header {
 }
 
 @media (max-width: 280px) {
+  .offer .offer__bt {
+    margin-top: 20px;
+  }
+
   .offer-decor {
     width: 380px !important;
   }
