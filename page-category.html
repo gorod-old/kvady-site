@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.min.css?_v=20220923070134">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.17/dist/css/splide-core.min.css?_v=20220923070134">
+    <link rel="stylesheet" href="css/style.min.css?_v=20220923113546">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.17/dist/css/splide-core.min.css?_v=20220923113546">
     <title>Купить Ролики Квады - Большой выбор моделей по низким ценам, купить Квады в Москве, Петербурге и с доставкой по России.</title>
 </head>
 
@@ -38,7 +38,7 @@
                     </button>
                 </div>
                 <div class="header__group">
-                    <button class="counter-button header__button" onclick="">
+                    <button id="button-bag" class="counter-button header__button" onclick="">
                         <img src="img/icon-bag.svg" alt="Bag list" class="counter-button__icon">
                         <div class="counter-button__counter">
                             <div class="counter">
@@ -47,7 +47,7 @@
                         </div>
                         <span class="tool-tip">корзина</span>
                     </button>
-                    <button class="counter-button header__button" onclick="">
+                    <button id="button-like" class="counter-button header__button" onclick="">
                         <img src="img/icon-like.svg" alt="Like list" class="counter-button__icon">
                         <div class="counter-button__counter">
                             <div class="counter">
@@ -727,6 +727,84 @@
     </div>
 </div>
 
+<!-- modal bag -->
+<div id="modal-bag" class="modal-dialog modal-hide hidden">
+    <div class="modal-dialog__popup popup">
+        <div class="popup__container">
+            <div class="popup__top">
+                <div class="popup__close modal-close">
+                    <span>закрыть</span>
+                    <button class="bt-close"><img src="img/icon-close.svg" alt="close"></button>
+                </div>
+            </div>
+            <div class="popup__scroll">
+                <div class="popup__title">товары в корзине</div>
+                <div class="popup__subtitle">список и цена отобранных товаров:</div>
+                <div class="popup__info">
+                    <div class="bag-item">
+    <div class="bag-item__container">
+        <a href="page-product.html" class="item-image bag-item__img">
+            <div class="item-image__img" style="background: url(img/prod-1.png) center/contain no-repeat;"></div>
+        </a>
+
+        <a href="page-product.html" class="bag-item__info">
+            <span class="bag-item__art">артикул: 000001</span>
+            <span class="bag-item__title">RIO ROLLER - LUMINA BLUE/PINK</span>
+            <span class="bag-item__desc">Размер: US 7 - 2 пары x 10200 руб.</span>
+        </a>
+        <div class="bag-item__info-price">
+            <span class="bag-item__price">20400 руб.</span>
+            <button class="bag-item__del"><img src="img/icon-del.svg" alt="delete"></button>
+        </div>
+    </div>
+</div>
+                    <div class="bag-item">
+    <div class="bag-item__container">
+        <a href="page-product.html" class="item-image bag-item__img">
+            <div class="item-image__img" style="background: url(img/prod-5.png) center/contain no-repeat;"></div>
+        </a>
+
+        <a href="page-product.html" class="bag-item__info">
+            <span class="bag-item__art">артикул: 000007</span>
+            <span class="bag-item__title">ROOKIE - ARTISTIC BLACK</span>
+            <span class="bag-item__desc">Размер: US 7 - 1 парa x 16400 руб.</span>
+        </a>
+        <div class="bag-item__info-price">
+            <span class="bag-item__price">16400 руб.</span>
+            <button class="bag-item__del"><img src="img/icon-del.svg" alt="delete"></button>
+        </div>
+    </div>
+</div>
+                    <div class="bag-item">
+    <div class="bag-item__container">
+        <a href="page-product.html" class="item-image bag-item__img">
+            <div class="item-image__img" style="background: url(img/prod-7.png) center/contain no-repeat;"></div>
+        </a>
+
+        <a href="page-product.html" class="bag-item__info">
+            <span class="bag-item__art">артикул: 000012</span>
+            <span class="bag-item__title">XIOBO - FOREST</span>
+            <span class="bag-item__desc">Размер: UK 4 - 1 пара x 9300 руб.</span>
+        </a>
+        <div class="bag-item__info-price">
+            <span class="bag-item__price">9300 руб.</span>
+            <button class="bag-item__del"><img src="img/icon-del.svg" alt="delete"></button>
+        </div>
+    </div>
+</div>
+                    <div class="bag-total"> Итого:
+                        <span>46100 руб.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="popup__bottom">
+                <button id="continue-buy" class="bt-ok modal-close">Каталог</button>
+                <button id="order-setup" class="bt-ok modal-close">Оформить заказ</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- login - email -->
 <div id="modal-login" class="modal-dialog modal-hide hidden">
     <div class="modal-dialog__popup popup popup-small">
@@ -958,7 +1036,7 @@
         </div>
     </div>
 </footer>
-    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.17/dist/js/splide.min.js?_v=20220923070134"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-intersection@0.2.0/dist/js/splide-extension-intersection.min.js?_v=20220923070134"></script>
-    <script src="js/app.min.js?_v=20220923070134"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.17/dist/js/splide.min.js?_v=20220923113546"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-intersection@0.2.0/dist/js/splide-extension-intersection.min.js?_v=20220923113546"></script>
+    <script src="js/app.min.js?_v=20220923113546"></script>
 </body>

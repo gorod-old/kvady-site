@@ -1936,13 +1936,18 @@ input[type=checkbox]:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   padding: 10px 5px 0 5px;
   border-top: 0.5px solid #282828;
 }
@@ -2721,6 +2726,55 @@ input[type=checkbox]:hover {
   color: #00B027;
 }
 
+#continue-buy,
+#order-setup {
+  height: 48px;
+  max-width: 450px;
+  min-width: 46%;
+  margin: 0 5px 8px;
+  padding: 10px 20px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+#order-setup {
+  background-color: #00B027;
+}
+
+.bag-total {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  border-top: 0.5px solid #282828;
+  padding: 15px 0 0;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 120.4%;
+  text-transform: uppercase;
+}
+
+.bag-total span {
+  padding-left: 20px;
+  font-family: "Jura";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.05em;
+}
+
 .slider-item {
   opacity: 0;
 }
@@ -3051,6 +3105,10 @@ input[type=checkbox]:hover {
   top: 0;
   left: 0;
   display: none;
+  -webkit-animation-name: menuMobileShow;
+          animation-name: menuMobileShow;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
 }
 
 .active-slider {
@@ -3812,10 +3870,11 @@ input[type=checkbox]:hover {
 .get-size-bt {
   width: 100%;
   height: 48px;
-  color: white;
-  background-color: #E15800;
-  padding: 10px 35px;
+  color: #282828;
+  background-color: transparent;
+  border: 0.5px solid #282828;
   border-radius: 3px;
+  padding: 10px 35px;
   -ms-flex-item-align: start;
       align-self: flex-start;
   margin-bottom: 6px;
@@ -4087,6 +4146,130 @@ select[name=quantity] {
   font-size: 13px;
   line-height: 115%;
   letter-spacing: 0.12em;
+}
+
+.bag-item {
+  padding: 0;
+  margin: 0 0 10px;
+}
+
+.bag-item__container {
+  position: relative;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  background-color: #EBEFF1;
+  padding: 5px 5px 0;
+}
+
+.bag-item__img {
+  background-color: #F1F1F1;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  margin: 0 10px 0 0;
+  max-width: 90px;
+  max-height: 90px;
+}
+
+.bag-item__img .item-image__img {
+  -webkit-box-shadow: inset 0px 2.5px 2.5px rgba(0, 0, 0, 0.25);
+          box-shadow: inset 0px 2.5px 2.5px rgba(0, 0, 0, 0.25);
+}
+
+.bag-item__info {
+  color: #282828;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 3px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.bag-item__art {
+  font-family: "Jura";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.05em;
+}
+
+.bag-item__title {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 120.4%;
+  text-transform: uppercase;
+  margin: 5px 0;
+}
+
+.bag-item__desc {
+  font-family: "Jura";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.05em;
+}
+
+.bag-item__info-price {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin: 5px 0;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  background-color: #F1F1F1;
+  -webkit-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.25);
+          box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.25);
+  padding: 3px;
+}
+
+.bag-item__price {
+  color: #282828;
+  margin: 0 15px 0;
+  font-family: "Jura";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.05em;
+}
+
+.bag-item__del {
+  background-color: transparent;
 }
 
 /*Base*/
@@ -5582,6 +5765,13 @@ header {
   }
 }
 
+@media (max-width: 375px) {
+  .bag-item__info {
+    -ms-flex-preferred-size: 46vw;
+        flex-basis: 46vw;
+  }
+}
+
 @media (max-width: 349px) {
   .page-offer {
     width: calc(100vw - 20px);
@@ -5674,6 +5864,13 @@ header {
   .modal-dialog__popup {
     max-width: unset;
     padding: 20px 5px;
+  }
+
+  #continue-buy,
+  #order-setup {
+    width: 100%;
+    min-width: unset;
+    font-size: 14px;
   }
 
   .header {
@@ -5801,6 +5998,11 @@ header {
   .modal-dialog__popup {
     max-width: unset;
     padding: 20px 5px;
+  }
+
+  #continue-buy,
+  #order-setup {
+    width: 100%;
   }
 }
 
